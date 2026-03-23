@@ -49,7 +49,7 @@ module tb_lfsr();
         rst_n = 1;      // Release reset
         // 5. Observe the output for 10 clock cycles
         repeat (15) begin
-            @(posedge clk); 
+            @(posedge clk);
             // $display("Time: %0t | LFSR State: %b (%d)", $time, q, q);
             expected_q = lfsr_lut[$past(q)]; // use the value of q just before this clock edge
             assert (q === expected_q)

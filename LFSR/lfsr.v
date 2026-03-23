@@ -18,8 +18,8 @@ module lfsr_4bit (
             // LFSRs cannot be reset to 0! Pick a 'seed' value like 4'b0001
             q <= 4'b0001;
         end else begin
-            // Shift logic: 
-            // We want to move bits [2:0] up to positions [3:1] 
+            // Shift logic:
+            // We want to move bits [2:0] up to positions [3:1]
             // and put the 'feedback' bit into position [0].
             q <= { q[2:0], feedback };
         end
