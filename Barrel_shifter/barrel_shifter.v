@@ -1,6 +1,10 @@
 // `timescale 1ns / 1ps
 // `default_nettype none
 
+// TODO: overflow flag is not going off for LSL in which the result is all 0s
+// in other words, when the shift is so much that the zero was more than 2 shifts ago, it forgets
+// I can fix this by using or gates on the overflow flag at every shift iteration?
+
 module cascade_or #(parameter SIZE = 4) (
     input  logic [SIZE-1:0] in,
     output logic          out

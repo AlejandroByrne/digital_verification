@@ -22,7 +22,10 @@ module top;
 
   initial begin
     uvm_config_db #(virtual dut_if)::set(null, "uvm_test_top", "dut_vi", dut_if1);
-    run_test("my_test");
+    // Pass "" so the test name comes from +UVM_TESTNAME= in sim options.
+    // In EDA Playground: add +UVM_TESTNAME=test_directed  (or test_random, my_test)
+    // to the simulation options box next to the run button.
+    run_test("");
   end
 
   initial begin
