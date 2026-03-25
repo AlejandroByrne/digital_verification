@@ -3,7 +3,7 @@ class fp_mult_agent extends uvm_agent;
 
   fp_mult_driver    drv;
   fp_mult_sequencer sqr;
-  // Monitor will be added here later (always created, active or passive)
+  fp_mult_monitor   mon;   // always created (active AND passive)
 
   function new(string name="fp_mult_agent", uvm_component parent);
     super.new(name, parent);
@@ -12,14 +12,14 @@ class fp_mult_agent extends uvm_agent;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
-    // Only create driver + sequencer if agent is ACTIVE
-    // (passive agent = monitor only, for observation without driving)
+    // Monitor is ALWAYS created — even a passive agent observes
+    mon = fp_mult_monitor::type_id::create("mon", this);
+
+    // Driver + sequencer only in ACTIVE mode
     if (get_is_active() == UVM_ACTIVE) begin
       drv = fp_mult_driver::type_id::create("drv", this);
       sqr = fp_mult_sequencer::type_id::create("sqr", this);
     end
-
-    // Monitor creation will go here
   endfunction: build_phase
 
   function void connect_phase(uvm_phase phase);
