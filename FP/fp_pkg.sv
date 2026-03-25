@@ -9,5 +9,6 @@ package fp_pkg;
 
   `include "fp_mult_txn.svh"
   `include "fp_mult_config.svh"
+  `include "fp_mult_driver.svh"
   // add new includes as the components are implemented
 endpackage
