@@ -1,0 +1,13 @@
+package fp_pkg;
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
+
+  // Configurable variables
+  // Default should be single FP (32 bits)
+  localparam P = 8;
+  localparam E = 8;
+
+  `include "fp_mult_txn.svh"
+  `include "fp_mult_config.svh"
+  // add new includes as the components are implemented
+endpackage
