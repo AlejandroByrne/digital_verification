@@ -25,7 +25,7 @@ module top;
 
   // Provide the config for when UVM starts the build phase
   initial begin
-    uvm_config_db #(virtual fp_mult_if)::set(null, "uvm_test_top", "fp_mult_vi", dut_if);
+    uvm_config_db #(virtual fp_mult_if)::set(null, "*", "fp_mult_vi", dut_if);
 
     // Pass "" so the test name comes from +UVM_TESTNAME= in sim options.
     run_test("");
