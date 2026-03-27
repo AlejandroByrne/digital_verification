@@ -1,0 +1,14 @@
+# Verilator compiled output (large — ~23 MB of C++ and binaries)
+**/obj_dir/
+
+# Waveform dumps
+*.vcd
+*.fst
+
+# macOS
+.DS_Store
+
+# Editor swap files
+*.swp
+*.swo
+*~
