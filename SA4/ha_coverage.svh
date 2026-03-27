@@ -56,4 +56,13 @@ class ha_coverage extends uvm_subscriber #(ha_txn);
         ha_cg.sample();
     endfunction : write
 
+    function void report_phase(uvm_phase phase);
+        super.report_phase(phase);
+        `uvm_info("COV", $sformatf("cp_a_in:      %.1f%%", ha_cg.cp_a_in.get_coverage()), UVM_LOW)
+        `uvm_info("COV", $sformatf("cp_b_in:      %.1f%%", ha_cg.cp_b_in.get_coverage()), UVM_LOW)
+        `uvm_info("COV", $sformatf("cp_carry_out: %.1f%%", ha_cg.cp_carry_out.get_coverage()), UVM_LOW)
+        `uvm_info("COV", $sformatf("cx_a_carry:   %.1f%%", ha_cg.cx_a_carry.get_coverage()), UVM_LOW)
+        `uvm_info("COV", $sformatf("TOTAL:        %.1f%%", ha_cg.get_coverage()), UVM_LOW)
+    endfunction : report_phase
+
 endclass : ha_coverage

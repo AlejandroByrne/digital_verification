@@ -18,14 +18,14 @@ package ha_pkg;
     // Driver (depends on txn + interface)
     `include "ha_driver.svh"
 
-    // Monitor — will be added here
-    // `include "ha_monitor.svh"
+    // Monitor (depends on txn + interface)
+    `include "ha_monitor.svh"
 
-    // Scoreboard — will be added here
-    // `include "ha_scoreboard.svh"
+    // Coverage (depends on txn)
+    `include "ha_coverage.svh"
 
-    // Coverage — will be added here
-    // `include "ha_coverage.svh"
+    // Scoreboard (depends on txn)
+    `include "ha_scoreboard.svh"
 
     // Sequences
     `include "ha_smoke_seq.svh"
@@ -36,5 +36,6 @@ package ha_pkg;
     `include "ha_env.svh"
     `include "ha_base_test.svh"
     `include "ha_smoke_test.svh"
+    `include "ha_random_test.svh"
 
 endpackage : ha_pkg
