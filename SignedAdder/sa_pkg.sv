@@ -1,5 +1,7 @@
 package sa_pkg;
   import uvm_pkg::*;
+  import ha_pkg::*;
+  import fa_pkg::*;
   `include "uvm_macros.svh"
 
   // Change this one value to resize the entire testbench + DUT
