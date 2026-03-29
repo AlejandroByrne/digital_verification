@@ -4,14 +4,14 @@ module traffic_light_controller (
     input logic clk,
     input logic rst_n,
     input logic sensor,
-    output state_t [1:0] light
+    output state_t light
 );
 
     logic [1:0] yellow_cycles;
     logic [2:0] red_cycles;
 
     always_ff @(posedge clk) begin
-        if (rst_n) begin
+        if (!rst_n) begin
             light <= GREEN;
             yellow_cycles <= 2;
             red_cycles <= 4;
@@ -25,13 +25,13 @@ module traffic_light_controller (
                 light <= RED;
                 red_cycles <= 4;
             end else begin
-                yellow_cycles -= 1;
+                yellow_cycles <= yellow_cycles - 1;
             end
         end else if (light == 2) begin
             if (red_cycles == 0) begin
                 light <= GREEN;
             end else begin
-                red_cycles -= 1;
+                red_cycles <= red_cycles - 1;
             end
         end
     end

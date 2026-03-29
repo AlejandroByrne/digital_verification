@@ -1,4 +1,6 @@
 class memory_transaction extends uvm_sequence_item;
+    `uvm_object_utils(memory_transaction)
+
     rand logic [7:0] src_addr;
     rand logic [7:0] dst_addr;
     rand logic [3:0] length;
@@ -16,4 +18,8 @@ class memory_transaction extends uvm_sequence_item;
         // src_addr max 255
         (src_addr + length) <= 256;
     }
+
+    function new(string name="memory_transaction");
+        super.new(name);
+    endfunction
 endclass
