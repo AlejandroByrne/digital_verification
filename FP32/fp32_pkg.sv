@@ -9,6 +9,22 @@ package fp32_pkg;
     import uvm_pkg::*;
     `include "uvm_macros.svh"
 
+    typedef enum {
+        RNE = 0,
+        RTZ = 1,
+        RDN = 2,
+        RUP = 3
+    } rnd_mode_t;
+
+    typedef enum {
+        ZERO      = 0,
+        SUBNORMAL = 1,
+        NORMAL    = 2,
+        INFINITY  = 3,
+        QNAN      = 4,
+        SNAN      = 5
+    } flags_t;
+
     // Transaction (no dependencies)
     `include "fp32_txn.svh"
 

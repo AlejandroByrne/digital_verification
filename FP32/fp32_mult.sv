@@ -21,13 +21,13 @@ module fp32_mult (
     input  logic [1:0]  rnd_mode_in,
     input  logic        valid_in,
     output logic [31:0] result_out,
-    output logic [4:0]  flags_out,
+    output logic [2:0]  flags_out,
     output logic        valid_out
 );
 
     // ── Combinational core ──
     logic [31:0] result_comb;
-    logic [4:0]  flags_comb;
+    logic [2:0]  flags_comb;
 
     fp32_mult_core core (
         .a        (a_in),
@@ -42,7 +42,7 @@ module fp32_mult (
         if (!rst_n) begin
             valid_out  <= 1'b0;
             result_out <= 32'h0;
-            flags_out  <= 5'h0;
+            flags_out  <= 3'h0;
         end else begin
             valid_out <= valid_in;
             if (valid_in) begin
@@ -64,7 +64,7 @@ module fp32_mult_core (
     input  logic [31:0] b,
     input  logic [1:0]  rnd_mode,
     output logic [31:0] result,
-    output logic [4:0]  flags
+    output logic [2:0]  flags
 );
 
     // ── Constants ──
@@ -120,12 +120,12 @@ module fp32_mult_core (
         // Priority order: sNaN > qNaN > Inf×0 > Inf > Zero
         if (a_snan || b_snan) begin
             special_result = QNAN;
-            special_flags  = 5'b10000;     // NV
+            special_flags  = 3'b100;     // NV
         end else if (a_qnan || b_qnan) begin
             special_result = QNAN;         // no exception
         end else if ((a_inf && b_zero) || (a_zero && b_inf)) begin
             special_result = QNAN;
-            special_flags  = 5'b10000;     // NV
+            special_flags  = 3'b100;     // NV
         end else if (a_inf || b_inf) begin
             special_result = {sign_r, 8'hFF, 23'h0};   // ±Inf
         end else if (a_zero || b_zero) begin

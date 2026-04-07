@@ -20,6 +20,6 @@ interface fp32_if (input logic clk);
 
     // Response (driven by DUT)
     logic [31:0] result_out;
-    logic [4:0]  flags_out;     // {NV, DZ, OF, UF, NX}
+    logic [2:0]  flags_out;     // {NV, DZ, OF, UF, NX}
 
 endinterface : fp32_if
