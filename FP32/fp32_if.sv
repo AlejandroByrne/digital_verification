@@ -20,6 +20,24 @@ interface fp32_if (input logic clk);
 
     // Response (driven by DUT)
     logic [31:0] result_out;
-    logic [2:0]  flags_out;     // {NV, DZ, OF, UF, NX}
+    logic [4:0]  flags_out;     // {NV, DZ, OF, UF, NX}
+
+    // ── Protocol Assertions ──
+
+    // 1. Handshake: valid_out must follow valid_in (1-cycle latency)
+    property p_latency;
+        @(posedge clk) disable iff (!rst_n)
+        valid_in |=> valid_out;
+    endproperty
+    a_latency: assert property (p_latency);
+
+    // 2. Data Stability: inputs must remain stable if valid_in is high
+    // (In this simple case, we just expect valid_in to be high for 1 cycle per txn)
+    
+    // 3. Reset: outputs must be zero when reset is active
+    property p_reset_state;
+        @(posedge clk) !rst_n |-> (!valid_out && result_out == 0 && flags_out == 0);
+    endproperty
+    a_reset_state: assert property (p_reset_state);
 
 endinterface : fp32_if

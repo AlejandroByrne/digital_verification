@@ -15,6 +15,15 @@ class fp32_scoreboard extends uvm_scoreboard;
 
     uvm_analysis_imp #(fp32_txn, fp32_scoreboard) analysis_export;
 
+    // DPI Import
+    import "DPI-C" function void call_python_model(
+        input  int unsigned a, 
+        input  int unsigned b, 
+        input  int unsigned rnd, 
+        output int unsigned result, 
+        output int unsigned flags
+    );
+
     int pass_count = 0;
     int fail_count = 0;
 
@@ -31,12 +40,17 @@ class fp32_scoreboard extends uvm_scoreboard;
     //  write() — called by the monitor via analysis port
     // ────────────────────────────────────────────────────────
     function void write(fp32_txn txn);
-        logic [31:0] exp_result;
-        logic [4:0]  exp_flags;
+        logic [31:0] sv_exp_result, py_exp_result;
+        logic [4:0]  sv_exp_flags,  py_exp_flags;
 
-        compute_expected(txn.a_in, txn.b_in, txn.rnd_mode, exp_result, exp_flags);
+        // 1. Compute with SV behavioral reference
+        compute_expected(txn.a_in, txn.b_in, txn.rnd_mode, sv_exp_result, sv_exp_flags);
 
-        if (txn.result === exp_result && txn.flags === exp_flags) begin
+        // 2. Compute with Python golden model via DPI
+        call_python_model(txn.a_in, txn.b_in, int'(txn.rnd_mode), py_exp_result, py_exp_flags);
+
+        // 3. Compare RTL against references
+        if (txn.result === py_exp_result && txn.flags === py_exp_flags[4:0]) begin
             pass_count++;
             `uvm_info("SB_PASS", $sformatf(
                 "0x%08h × 0x%08h [rnd=%0d] → 0x%08h flags=%05b",
@@ -45,10 +59,11 @@ class fp32_scoreboard extends uvm_scoreboard;
         end else begin
             fail_count++;
             `uvm_error("SB_FAIL", $sformatf(
-                "\n  0x%08h × 0x%08h [rnd=%0d]\n  DUT: result=0x%08h flags=%05b\n  REF: result=0x%08h flags=%05b",
+                "\n  0x%08h × 0x%08h [rnd=%0d]\n  DUT: result=0x%08h flags=%05b\n  PY : result=0x%08h flags=%05b\n  SV : result=0x%08h flags=%05b",
                 txn.a_in, txn.b_in, txn.rnd_mode,
                 txn.result, txn.flags,
-                exp_result, exp_flags))
+                py_exp_result, py_exp_flags[4:0],
+                sv_exp_result, sv_exp_flags))
         end
     endfunction : write
 

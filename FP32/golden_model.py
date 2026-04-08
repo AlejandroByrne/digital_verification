@@ -396,7 +396,11 @@ def run_test(a_bits: int, b_bits: int, rnd: int = 0, label: str = ""):
 
     # Cross-check with Python float arithmetic
     py_result = da.value * db.value
-    py_bits = encode(py_result) if not (math.isnan(da.value) or math.isnan(db.value)) else CANON_NAN
+    try:
+        py_bits = encode(py_result) if not (math.isnan(da.value) or math.isnan(db.value)) else CANON_NAN
+    except OverflowError:
+        # If python float overflows, it should be Inf with the correct sign
+        py_bits = (sign_r << SIGN_BIT) | (EXP_MAX << FRAC_BITS)
 
     match = "✓ MATCH" if result_bits == py_bits else f"✗ MISMATCH (python gives 0x{py_bits:08X} = {bits_to_float(py_bits)})"
 
@@ -441,7 +445,13 @@ if __name__ == "__main__":
         a = int(sys.argv[2], 0)
         b = int(sys.argv[3], 0)
         rnd = int(sys.argv[4]) if len(sys.argv) > 4 else 0
-        run_test(a, b, rnd, "manual")
+        quiet = "--quiet" in sys.argv
+        
+        result_bits, flags = multiply(a, b, rnd)
+        if quiet:
+            print(f"0x{result_bits:08X} 0x{flags.to_bits():02X}")
+        else:
+            run_test(a, b, rnd, "manual")
         sys.exit(0)
 
     print("═" * 65)

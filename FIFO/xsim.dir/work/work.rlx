@@ -1,0 +1,21 @@
+0.7
+2020.2
+May 21 2025
+22:59:56
+/home/ale/Documents/digital_verification/FIFO/fifo.v,1775585787,systemVerilog,,/home/ale/Documents/digital_verification/FIFO/fifo_tb_top.sv,,fifo,,uvm,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_agent.svh,1775587511,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_base_test.svh,1775587519,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_config.svh,1775618560,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_coverage.svh,1775614547,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_driver.svh,1775618903,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_env.svh,1775587515,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_if.sv,1775618779,verilog,,,/tools/Xilinx/2025.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh,fifo_if,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_monitor.svh,1775587812,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_pkg.sv,1775618672,verilog,/home/ale/Documents/digital_verification/FIFO/fifo_tb_top.sv,,/tools/Xilinx/2025.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh;/home/ale/Documents/digital_verification/FIFO/fifo_txn.svh;/home/ale/Documents/digital_verification/FIFO/fifo_sequencer.svh;/home/ale/Documents/digital_verification/FIFO/fifo_driver.svh;/home/ale/Documents/digital_verification/FIFO/fifo_monitor.svh;/home/ale/Documents/digital_verification/FIFO/fifo_agent.svh;/home/ale/Documents/digital_verification/FIFO/fifo_scoreboard.svh;/home/ale/Documents/digital_verification/FIFO/fifo_env.svh;/home/ale/Documents/digital_verification/FIFO/fifo_base_test.svh;/home/ale/Documents/digital_verification/FIFO/fifo_rand_sequence.svh;/home/ale/Documents/digital_verification/FIFO/fifo_rand_test.svh;/home/ale/Documents/digital_verification/FIFO/fifo_config.svh;/home/ale/Documents/digital_verification/FIFO/fifo_coverage.svh;/home/ale/Documents/digital_verification/FIFO/fifo_sequences.svh;/home/ale/Documents/digital_verification/FIFO/fifo_tests.svh,fifo_pkg,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_scoreboard.svh,1775587959,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_sequencer.svh,1775618911,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_sequences.svh,1775618659,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_tb_top.sv,1775618676,systemVerilog,,,/home/ale/Documents/digital_verification/FIFO/fifo_pkg.sv;/home/ale/Documents/digital_verification/FIFO/fifo_if.sv,top,,uvm,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_tests.svh,1775618668,verilog,,,,,,,,,,,,
+/home/ale/Documents/digital_verification/FIFO/fifo_txn.svh,1775619001,verilog,,,,,,,,,,,,
+/tools/Xilinx/2025.1/data/xsim/system_verilog/uvm_include/uvm_macros.svh,1747891607,verilog,,,,,,,,,,,,

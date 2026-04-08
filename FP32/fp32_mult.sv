@@ -21,13 +21,13 @@ module fp32_mult (
     input  logic [1:0]  rnd_mode_in,
     input  logic        valid_in,
     output logic [31:0] result_out,
-    output logic [2:0]  flags_out,
+    output logic [4:0]  flags_out,
     output logic        valid_out
 );
 
     // ── Combinational core ──
     logic [31:0] result_comb;
-    logic [2:0]  flags_comb;
+    logic [4:0]  flags_comb;
 
     fp32_mult_core core (
         .a        (a_in),
@@ -64,7 +64,7 @@ module fp32_mult_core (
     input  logic [31:0] b,
     input  logic [1:0]  rnd_mode,
     output logic [31:0] result,
-    output logic [2:0]  flags
+    output logic [4:0]  flags
 );
 
     // ── Constants ──

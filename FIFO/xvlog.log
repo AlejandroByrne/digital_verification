@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ale/Documents/digital_verification/FIFO/fifo.v" into library work
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ale/Documents/digital_verification/FIFO/fifo_tb_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module top
