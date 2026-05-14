@@ -1,0 +1,15 @@
+In digital electronics, a race condition (or hazard) happens in asynchronous circuits when multiple state variables change due to one input change, 
+and their different arrival times (delays) cause them to transition in an unexpected order, leading to temporary, incorrect intermediate states or 
+even different final stable states, making the circuit's behavior timing-dependent and unreliable. It's a "race" for signals to settle, and if the 
+outcome isn't identical regardless of the slight timing differences, it's a critical race that must be avoided through design, like proper clocking 
+or synchronization. 
+
+How it happens (Asynchronous Circuits)
+Multiple Changes: An input change makes several internal state variables (like flip-flop outputs) try to change simultaneously.
+Unequal Delays: Due to transistor variations or path lengths, these signals don't arrive at their destinations at exactly the same instant.
+Unexpected Path: Instead of going directly from state A to state C (e.g., 00 to 11), the circuit might briefly go through state B (e.g., 00 -> 10 -> 11 or 00 -> 01 -> 11), depending on which signal "wins" the race. 
+
+How to Avoid
+Synchronous Design: Use clocked sequential circuits (like master-slave flip-flops) to ensure state changes happen only on a precise clock edge, not randomly.
+Clock Gating: Safely inhibit clocks in the middle of their low period to prevent glitches.
+Synchronization: Use synchronizers (like two flip-flops) to handle asynchronous inputs reliably. 

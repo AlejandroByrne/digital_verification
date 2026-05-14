@@ -1,0 +1,4 @@
+⚠️ Important rule:
+
+Randomization only works in classes, not modules.
+

@@ -1,0 +1,169 @@
+Perfect ✅
+**A2.3 — Inheritance is CLEAR.**
+
+We continue **strictly as per roadmap**, still **paused on Monitor & Scoreboard**.
+
+---
+
+# 🔵 Phase A2.4 — Polymorphism & `virtual` Methods
+
+⚠️ **MOST IMPORTANT OOP TOPIC (UVM CORE)**
+
+If this clicks → UVM will feel natural.
+
+---
+
+## 🧠 What is Polymorphism (in 1 line)
+
+> **Same handle → different behavior depending on object type**
+
+This is how **drivers, monitors, scoreboards** work in UVM.
+
+---
+
+## 🚫 What does NOT work (important)
+
+```systemverilog
+class packet;
+    function void display();
+        $display("BASE");
+    endfunction
+endclass
+
+class error_packet extends packet;
+    function void display();
+        $display("CHILD");
+    endfunction
+endclass
+
+packet p = new error_packet();
+p.display();   // ❌ prints BASE
+```
+
+Why?
+➡️ **No `virtual` keyword**
+
+---
+
+## ✅ Correct way (THIS is polymorphism)
+
+### 1️⃣ Base class (method MUST be virtual)
+
+```systemverilog
+class packet;
+    rand bit [7:0] data;
+
+    virtual function void display();
+        $display("[BASE] data=%0h", data);
+    endfunction
+endclass
+```
+
+---
+
+### 2️⃣ Child class (override)
+
+```systemverilog
+class error_packet extends packet;
+    rand bit parity;
+
+    function void display();
+        $display("[CHILD] data=%0h parity=%0b", data, parity);
+    endfunction
+endclass
+```
+
+---
+
+## 🧪 Hands-on (XSIM)
+
+📁 **File: `a2_4_polymorphism.sv`**
+
+```systemverilog
+class packet;
+    rand bit [7:0] data;
+
+    virtual function void display();
+        $display("[BASE] data=%0h", data);
+    endfunction
+endclass
+
+
+class error_packet extends packet;
+    rand bit parity;
+
+    function void display();
+        $display("[CHILD] data=%0h parity=%0b", data, parity);
+    endfunction
+endclass
+
+
+module tb;
+    packet p;
+
+    initial begin
+        // Parent handle → Child object
+        p = new error_packet();
+
+        assert(p.randomize());
+        p.display();   // ✅ CHILD method executes
+
+        #10 $finish;
+    end
+endmodule
+```
+
+---
+
+## ▶️ Run
+
+```tcl
+xvlog -sv a2_4_polymorphism.sv
+xelab tb
+xsim tb -R
+```
+
+---
+
+## 🔍 Expected Output
+
+```
+[CHILD] data=7c parity=1
+```
+
+➡️ **Even though handle is `packet`**
+
+---
+
+## 🔥 Why this matters for UVM
+
+| UVM Component | Uses Polymorphism                      |
+| ------------- | -------------------------------------- |
+| Driver        | base handle → protocol-specific driver |
+| Sequence      | base seq → derived seq                 |
+| Monitor       | generic → specialized                  |
+| Scoreboard    | protocol-specific checking             |
+
+UVM without polymorphism = **impossible**.
+
+---
+
+## ❗ Golden Rules (Memorize)
+
+| Rule                              | True |
+| --------------------------------- | ---- |
+| Base method must be `virtual`     | ✔️   |
+| Child overrides without `virtual` | ✔️   |
+| Parent handle calls child method  | ✔️   |
+| Without virtual → base executes   | ✔️   |
+
+---
+
+## ✅ Exit Criteria
+
+Reply only with:
+
+> **“A2.4 polymorphism clear”**
+
+Next:
+➡️ **A2.5 — Shallow vs Deep Copy** (last OOP topic before mailbox).

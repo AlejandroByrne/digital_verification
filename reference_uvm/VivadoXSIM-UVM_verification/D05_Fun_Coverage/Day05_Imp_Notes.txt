@@ -1,0 +1,19 @@
+1️⃣ What Functional Coverage IS (Conceptual)
+
+Randomization answers:
+
+What values did I generate?
+
+Coverage answers:
+
+What behaviors did I actually test?
+
+Without coverage:
+
+Random ≠ complete
+
+Bugs hide silently
+
+📌 Golden interview line:
+
+“Random stimulus without functional coverage is blind verification.”
