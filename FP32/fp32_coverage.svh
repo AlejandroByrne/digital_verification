@@ -51,7 +51,16 @@ class fp32_coverage extends uvm_subscriber #(fp32_txn);
         cp_flag_uf: coverpoint txn.flags[1] { bins hit = {1}; }
         cp_flag_nx: coverpoint txn.flags[0] { bins hit = {1}; }
 
+        // ── Rounding Boundary Logic ──
+        cp_grs: coverpoint {txn.lsb, txn.guard, txn.round, txn.sticky} {
+            bins tie_to_even_round_up   = {4'b1100}; 
+            bins tie_to_even_stay_down  = {4'b0100};
+            bins round_up_not_tie       = {4'b?11?, 4'b?1?1};
+            bins round_down             = {4'b?0??};
+        }
+
         // ── Cross Products ──
+        cross_rnd_logic:  cross cp_rnd_mode, cp_grs;
         cross_op_classes: cross cp_a_class, cp_b_class;
         cross_signs:      cross cp_a_sign, cp_b_sign;
         cross_rnd_flags:  cross cp_rnd_mode, cp_flag_nx, cp_flag_of, cp_flag_uf;
@@ -61,7 +70,7 @@ class fp32_coverage extends uvm_subscriber #(fp32_txn);
     function new(string name = "fp32_coverage", uvm_component parent = null);
         super.new(name, parent);
         cg_fp32 = new();
-    endgroup : new
+    endfunction : new
 
     function void write(fp32_txn t);
         this.txn = t;

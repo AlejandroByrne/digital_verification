@@ -1,11 +1,10 @@
 // ============================================================
 //  IEEE 754 Float32 Multiplier — Testbench Top
-//
-//  Instantiates clock, interface, DUT, and kicks off UVM.
 // ============================================================
 
 `include "fp32_pkg.sv"
 `include "fp32_if.sv"
+`include "fp32_internal_if.sv"
 
 module top;
     import uvm_pkg::*;
@@ -18,6 +17,17 @@ module top;
 
     // ── Interface ──
     fp32_if dut_if (.clk(clk));
+    
+    // ── Internal Interface (Peeking) ──
+    fp32_internal_if int_if();
+    
+    // Manual mapping (xsim doesn't always support bind well for deep logic)
+    always_comb begin
+        int_if.lsb    = dut.core.lsb;
+        int_if.guard  = dut.core.guard;
+        int_if.round  = dut.core.round_bit;
+        int_if.sticky = dut.core.sticky;
+    end
 
     // ── DUT instantiation ──
     fp32_mult dut (
@@ -42,13 +52,16 @@ module top;
     // ── UVM entry point ──
     initial begin
         uvm_config_db #(virtual fp32_if)::set(null, "*", "fp32_vi", dut_if);
-        run_test("");          // test name from +UVM_TESTNAME=
+        uvm_config_db #(virtual fp32_internal_if)::set(null, "*", "fp32_int_vi", int_if);
+        run_test(); 
     end
 
-    // ── Waveform dump ──
+    // ── Waveform dump (opt-in via +DUMP plusarg to avoid huge VCDs) ──
     initial begin
-        $dumpfile("dump.vcd");
-        $dumpvars;
+        if ($test$plusargs("DUMP")) begin
+            $dumpfile("dump.vcd");
+            $dumpvars;
+        end
     end
 
 endmodule : top

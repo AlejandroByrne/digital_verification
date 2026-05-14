@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ale/Documents/digital_verification/FP32/fp32_mult.sv" into library work
+INFO: [VRFC 10-311] analyzing module fp32_mult
+INFO: [VRFC 10-311] analyzing module fp32_mult_core
+INFO: [VRFC 10-311] analyzing module fp32_clz23
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ale/Documents/digital_verification/FP32/fp32_tb_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module top

@@ -1,0 +1,1 @@
+-L "uvm" "work.top" -s "top_sim" -sv_lib "dpi" -timescale "1ns/1ps" -cov_db_name "fp32_constrained_test_cov" 

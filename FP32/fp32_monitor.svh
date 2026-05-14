@@ -11,6 +11,7 @@ class fp32_monitor extends uvm_monitor;
     `uvm_component_utils(fp32_monitor)
 
     virtual fp32_if vif;
+    virtual fp32_internal_if int_vif;
     uvm_analysis_port #(fp32_txn) ap;
 
     function new(string name = "fp32_monitor", uvm_component parent = null);
@@ -22,6 +23,8 @@ class fp32_monitor extends uvm_monitor;
         ap = new("ap", this);
         if (!uvm_config_db #(virtual fp32_if)::get(this, "", "fp32_vi", vif))
             `uvm_fatal("MON", "No virtual interface in config_db")
+        if (!uvm_config_db #(virtual fp32_internal_if)::get(this, "", "fp32_int_vi", int_vif))
+            `uvm_fatal("MON", "No internal virtual interface in config_db")
     endfunction : build_phase
 
     task run_phase(uvm_phase phase);
@@ -29,7 +32,7 @@ class fp32_monitor extends uvm_monitor;
 
         forever begin
             // Wait for driver to assert valid_in
-            @(posedge vif.clk iff vif.valid_in);
+            @(posedge vif.clk iff (vif.rst_n && vif.valid_in));
 
             // Capture stimulus
             txn          = fp32_txn::type_id::create("txn");
@@ -44,10 +47,16 @@ class fp32_monitor extends uvm_monitor;
             txn.result = vif.result_out;
             txn.flags  = vif.flags_out;
 
+            // ── White-box peeking via internal IF ──
+            txn.lsb    = int_vif.lsb;
+            txn.guard  = int_vif.guard;
+            txn.round  = int_vif.round;
+            txn.sticky = int_vif.sticky;
+
             `uvm_info("MON", $sformatf(
-                "a=0x%08h b=0x%08h rnd=%0d → result=0x%08h flags=%05b",
+                "a=0x%08h b=0x%08h rnd=%0d → result=0x%08h flags=%05b [G=%b R=%b S=%b]",
                 txn.a_in, txn.b_in, txn.rnd_mode,
-                txn.result, txn.flags), UVM_HIGH)
+                txn.result, txn.flags, txn.guard, txn.round, txn.sticky), UVM_HIGH)
 
             // Broadcast to all subscribers
             ap.write(txn);

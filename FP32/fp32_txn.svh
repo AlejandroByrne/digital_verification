@@ -18,6 +18,12 @@ class fp32_txn extends uvm_sequence_item;
     logic [31:0] result;
     logic [4:0]  flags;
 
+    // ── Internal Rounding Context (for coverage) ──
+    logic        lsb;
+    logic        guard;
+    logic        round;
+    logic        sticky;
+
     function new(string name = "fp32_txn");
         super.new(name);
     endfunction : new

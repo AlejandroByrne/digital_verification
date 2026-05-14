@@ -21,7 +21,10 @@ void call_python_model(
     // We assume the script prints: RESULT:0x... FLAGS:0x...
     // Let's modify the script slightly to provide this parseable output.
     
-    sprintf(command, "python3 FP32/golden_model.py --mult 0x%08x 0x%08x %u --quiet", a, b, rnd);
+    // Use GOLDEN_MODEL env var if set, otherwise try both common locations
+    const char *model = getenv("GOLDEN_MODEL");
+    if (model == NULL || model[0] == '\0') model = "golden_model.py";
+    sprintf(command, "python3 %s --mult 0x%08x 0x%08x %u --quiet", model, a, b, rnd);
     
     fp = popen(command, "r");
     if (fp == NULL) {

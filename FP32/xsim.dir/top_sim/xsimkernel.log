@@ -1,0 +1,7 @@
+Running: xsim.dir/top_sim/xsimk -cov_db_name fp32_constrained_test_cov -runall -simmode gui -testplusarg UVM_TESTNAME=fp32_constrained_test -testplusarg UVM_VERBOSITY=UVM_LOW -wdb top_sim.wdb -simrunnum 0 -socket 34975
+Design successfully loaded
+Design Loading Memory Usage: 198292 KB (Peak: 198292 KB)
+Design Loading CPU Usage: 1270 ms
+Simulation completed
+Simulation Memory Usage: 293100 KB (Peak: 337560 KB)
+Simulation CPU Usage: 5040 ms

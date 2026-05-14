@@ -10,22 +10,23 @@
 //  golden model (golden_model.py --mult <a> <b> <rnd>).
 // ============================================================
 
+// DPI Import outside or at the start of class
+import "DPI-C" function void call_python_model(
+    input  int unsigned a, 
+    input  int unsigned b, 
+    input  int unsigned rnd, 
+    output int unsigned result, 
+    output int unsigned flags
+);
+
 class fp32_scoreboard extends uvm_scoreboard;
     `uvm_component_utils(fp32_scoreboard)
 
     uvm_analysis_imp #(fp32_txn, fp32_scoreboard) analysis_export;
 
-    // DPI Import
-    import "DPI-C" function void call_python_model(
-        input  int unsigned a, 
-        input  int unsigned b, 
-        input  int unsigned rnd, 
-        output int unsigned result, 
-        output int unsigned flags
-    );
-
     int pass_count = 0;
     int fail_count = 0;
+    bit use_py_dpi = 0;   // +USE_PY_DPI to cross-check with python golden model
 
     function new(string name = "fp32_scoreboard", uvm_component parent = null);
         super.new(name, parent);
@@ -34,6 +35,7 @@ class fp32_scoreboard extends uvm_scoreboard;
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         analysis_export = new("analysis_export", this);
+        if ($test$plusargs("USE_PY_DPI")) use_py_dpi = 1;
     endfunction : build_phase
 
     // ────────────────────────────────────────────────────────
@@ -46,8 +48,13 @@ class fp32_scoreboard extends uvm_scoreboard;
         // 1. Compute with SV behavioral reference
         compute_expected(txn.a_in, txn.b_in, txn.rnd_mode, sv_exp_result, sv_exp_flags);
 
-        // 2. Compute with Python golden model via DPI
-        call_python_model(txn.a_in, txn.b_in, int'(txn.rnd_mode), py_exp_result, py_exp_flags);
+        // 2. Optionally cross-check with Python golden model via DPI (slow: forks per-txn)
+        if (use_py_dpi) begin
+            call_python_model(txn.a_in, txn.b_in, int'(txn.rnd_mode), py_exp_result, py_exp_flags);
+        end else begin
+            py_exp_result = sv_exp_result;
+            py_exp_flags  = sv_exp_flags;
+        end
 
         // 3. Compare RTL against references
         if (txn.result === py_exp_result && txn.flags === py_exp_flags[4:0]) begin

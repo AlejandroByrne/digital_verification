@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ale/Documents/digital_verification/Barrel_shifter/barrel_shifter.v" into library work
+INFO: [VRFC 10-311] analyzing module cascade_or
+INFO: [VRFC 10-311] analyzing module overflow_detect
+INFO: [VRFC 10-311] analyzing module mux_2
+INFO: [VRFC 10-311] analyzing module barrelshifter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/ale/Documents/digital_verification/Barrel_shifter/testbench.sv" into library work
+INFO: [VRFC 10-311] analyzing module top

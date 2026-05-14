@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Apr  7 22:30:47 2026
-# Process ID         : 3161534
+# Start of session at: Tue Apr  7 22:37:18 2026
+# Process ID         : 3172112
 # Current directory  : /home/ale/Documents/digital_verification/FIFO
 # Command line       : xsim -mode tcl -source {xsim.dir/top_sim/xsim_script.tcl}
 # Log file           : /home/ale/Documents/digital_verification/FIFO/xsim.log
@@ -13,16 +13,16 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.2 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
-# CPU Frequency      : 4077.049 MHz
+# CPU Frequency      : 4073.360 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16646 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 20941 MB
-# Available Virtual  : 9092 MB
+# Available Virtual  : 9079 MB
 #-----------------------------------------------------------
 source xsim.dir/top_sim/xsim_script.tcl
-# xsim {top_sim} -testplusarg UVM_TESTNAME=fifo_full_empty_test -autoloadwcfg -runall
+# xsim {top_sim} -testplusarg UVM_TESTNAME=fifo_rand_test -autoloadwcfg -runall
 Time resolution is 1 ps
 run -all
 UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
@@ -46,12 +46,12 @@ UVM-1.2
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
-UVM_INFO @ 0: reporter [RNTST] Running test fifo_full_empty_test...
+UVM_INFO @ 0: reporter [RNTST] Running test fifo_rand_test...
 UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
 --------------------------------------------------------------
 Name                       Type                    Size  Value
 --------------------------------------------------------------
-uvm_test_top               fifo_full_empty_test    -     @341 
+uvm_test_top               fifo_rand_test          -     @341 
   env                      fifo_env                -     @354 
     agt                    fifo_agent              -     @363 
       ap                   uvm_analysis_port       -     @401 
@@ -74,9 +74,9 @@ uvm_test_top               fifo_full_empty_test    -     @341
 --------------------------------------------------------------
 
 UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
-UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 455000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO fifo_scoreboard.svh(62) @ 455000: uvm_test_top.env.sb [SB] Scoreboard: 16 Pass, 0 Fail
-UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 455000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1255000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO fifo_scoreboard.svh(62) @ 1255000: uvm_test_top.env.sb [SB] Scoreboard: 19 Pass, 0 Fail
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1255000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
@@ -93,6 +93,6 @@ UVM_FATAL :    0
 [UVM/RELNOTES]     1
 [UVMTOP]     1
 
-$finish called at time : 455 ns : File "/tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+$finish called at time : 1255 ns : File "/tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
 exit
-INFO: [Common 17-206] Exiting xsim at Tue Apr  7 22:30:51 2026...
+INFO: [Common 17-206] Exiting xsim at Tue Apr  7 22:37:22 2026...

@@ -1,0 +1,566 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Apr  8 08:07:33 2026
+# Process ID         : 4019994
+# Current directory  : /home/ale/Documents/digital_verification/FP32
+# Command line       : xsim -mode tcl -source {xsim.dir/top_sim/xsim_script.tcl}
+# Log file           : /home/ale/Documents/digital_verification/FP32/xsim.log
+# Journal file       : /home/ale/Documents/digital_verification/FP32/xsim.jou
+# Running On         : vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+# CPU Frequency      : 4000.003 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16646 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20941 MB
+# Available Virtual  : 9239 MB
+#-----------------------------------------------------------
+source xsim.dir/top_sim/xsim_script.tcl
+# xsim {top_sim} -testplusarg UVM_TESTNAME=fp32_constrained_test -testplusarg UVM_VERBOSITY=UVM_LOW -cov_db_name fp32_constrained_test_cov -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test fp32_constrained_test...
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_ERROR fp32_scoreboard.svh(73) @ 505000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0036b178 × 0x00679bcb [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 865000: uvm_test_top.env.sb [SB_FAIL] 
+  0x801d3525 × 0x161d8806 [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000001 flags=00011
+  SV : result=0x80000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 1015000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0061dcbd × 0x8000c2ce [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 1195000: uvm_test_top.env.sb [SB_FAIL] 
+  0x00175f09 × 0x5479a1e9 [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x143651be flags=00001
+  SV : result=0x143651be flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 1255000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8029435b × 0x80630773 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 1405000: uvm_test_top.env.sb [SB_FAIL] 
+  0x4307445e × 0x8036f177 [rnd=1]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x83684010 flags=00001
+  SV : result=0x83684010 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 1435000: uvm_test_top.env.sb [SB_FAIL] 
+  0x003b0e9a × 0x8078602c [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 1615000: uvm_test_top.env.sb [SB_FAIL] 
+  0x5f003d59 × 0x00129554 [rnd=1]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x1e94f1e0 flags=00001
+  SV : result=0x1e94f1e0 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 1645000: uvm_test_top.env.sb [SB_FAIL] 
+  0x80353f6f × 0x5f43f6d6 [rnd=3]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x9fa30aa4 flags=00001
+  SV : result=0x9fa30aa4 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 1975000: uvm_test_top.env.sb [SB_FAIL] 
+  0xb617bfb5 × 0x002a9501 [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000006 flags=00011
+  SV : result=0x80000006 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 2395000: uvm_test_top.env.sb [SB_FAIL] 
+  0x003e9b9e × 0x66768b8b [rnd=3]
+  DUT: result=0x00000001 flags=00011
+  PY : result=0x26f12eaa flags=00001
+  SV : result=0x26f12eaa flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 2635000: uvm_test_top.env.sb [SB_FAIL] 
+  0x80208134 × 0x00618bfd [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 2725000: uvm_test_top.env.sb [SB_FAIL] 
+  0x643889c0 × 0x000dad10 [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x239dbbf5 flags=00001
+  SV : result=0x239dbbf5 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 3835000: uvm_test_top.env.sb [SB_FAIL] 
+  0xcea896d2 × 0x801436d8 [rnd=3]
+  DUT: result=0x00000001 flags=00011
+  PY : result=0x0e54fe68 flags=00001
+  SV : result=0x0e54fe68 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 4225000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0e5788a4 × 0x0011bfd6 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 4255000: uvm_test_top.env.sb [SB_FAIL] 
+  0x5b804110 × 0x0020b5ba [rnd=1]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x1b831969 flags=00001
+  SV : result=0x1b831969 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 4375000: uvm_test_top.env.sb [SB_FAIL] 
+  0x1ca5fa5c × 0x803beadf [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 4405000: uvm_test_top.env.sb [SB_FAIL] 
+  0x686fa3e1 × 0x00153964 [rnd=0]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x281ef154 flags=00001
+  SV : result=0x281ef154 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 4525000: uvm_test_top.env.sb [SB_FAIL] 
+  0x25fc005d × 0x80063b84 [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 4855000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8011a5e9 × 0x0c2c840e [rnd=1]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 5065000: uvm_test_top.env.sb [SB_FAIL] 
+  0x03f9708e × 0x001fed94 [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 6295000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0038b6c6 × 0x6763b245 [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x27c9c63f flags=00001
+  SV : result=0x27c9c63f flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 6535000: uvm_test_top.env.sb [SB_FAIL] 
+  0x003b28d0 × 0x0068e0c4 [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 6655000: uvm_test_top.env.sb [SB_FAIL] 
+  0x804f6974 × 0x002eb0dd [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 6985000: uvm_test_top.env.sb [SB_FAIL] 
+  0x41a8260b × 0x001975e6 [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x0185c93c flags=00001
+  SV : result=0x0185c93c flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 7045000: uvm_test_top.env.sb [SB_FAIL] 
+  0x55a46995 × 0x00327f06 [rnd=0]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x1601b8cd flags=00001
+  SV : result=0x1601b8cd flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 7135000: uvm_test_top.env.sb [SB_FAIL] 
+  0x802c46cd × 0x37a64875 [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000039 flags=00011
+  SV : result=0x80000039 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 7285000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0005c1fd × 0x33dd4b91 [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 7315000: uvm_test_top.env.sb [SB_FAIL] 
+  0x46e9131a × 0x8033d957 [rnd=2]
+  DUT: result=0x80000001 flags=00011
+  PY : result=0x873cd2bb flags=00001
+  SV : result=0x873cd2bb flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 8215000: uvm_test_top.env.sb [SB_FAIL] 
+  0x4eb2f5a1 × 0x80353f27 [rnd=3]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x8f14e400 flags=00001
+  SV : result=0x8f14e400 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 9145000: uvm_test_top.env.sb [SB_FAIL] 
+  0x48ec25a5 × 0x003f0d7a [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x0968a6c8 flags=00001
+  SV : result=0x0968a6c8 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 9265000: uvm_test_top.env.sb [SB_FAIL] 
+  0x802eec2e × 0x1f1cf429 [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000001 flags=00011
+  SV : result=0x80000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 9355000: uvm_test_top.env.sb [SB_FAIL] 
+  0x80290034 × 0x613d1d23 [rnd=2]
+  DUT: result=0x80000001 flags=00011
+  PY : result=0xa1724e89 flags=00001
+  SV : result=0xa1724e89 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 9685000: uvm_test_top.env.sb [SB_FAIL] 
+  0x000c23a5 × 0x07763843 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 9865000: uvm_test_top.env.sb [SB_FAIL] 
+  0x002f9e14 × 0x80583fca [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 10315000: uvm_test_top.env.sb [SB_FAIL] 
+  0x003e78bd × 0x6f8929a8 [rnd=0]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x3005e31e flags=00001
+  SV : result=0x3005e31e flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 10585000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8019166e × 0x44bdfb70 [rnd=3]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x8494f199 flags=00001
+  SV : result=0x8494f199 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 10765000: uvm_test_top.env.sb [SB_FAIL] 
+  0x002fa1a5 × 0x65c3b3ab [rnd=1]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x2611a63a flags=00001
+  SV : result=0x2611a63a flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 11005000: uvm_test_top.env.sb [SB_FAIL] 
+  0x01d2e6df × 0x80205fec [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 11455000: uvm_test_top.env.sb [SB_FAIL] 
+  0x003130cb × 0xd06f6df4 [rnd=1]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x90b806b8 flags=00001
+  SV : result=0x90b806b8 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 11635000: uvm_test_top.env.sb [SB_FAIL] 
+  0x2fae90fa × 0x0039ed15 [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 11725000: uvm_test_top.env.sb [SB_FAIL] 
+  0x801cbc4d × 0x07b8712e [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 11875000: uvm_test_top.env.sb [SB_FAIL] 
+  0x1dcade81 × 0x0019e894 [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 12175000: uvm_test_top.env.sb [SB_FAIL] 
+  0x800de665 × 0x7e09f1c7 [rnd=3]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0xbd6fad98 flags=00001
+  SV : result=0xbd6fad98 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 12565000: uvm_test_top.env.sb [SB_FAIL] 
+  0x80157f0d × 0x48746cd7 [rnd=2]
+  DUT: result=0x80000001 flags=00011
+  PY : result=0x882431e1 flags=00001
+  SV : result=0x882431e1 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 12595000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8029512e × 0x287e7a8f [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 13375000: uvm_test_top.env.sb [SB_FAIL] 
+  0x804d5ccc × 0x802881a4 [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 13465000: uvm_test_top.env.sb [SB_FAIL] 
+  0x494e91ef × 0x8018d137 [rnd=0]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x892033ff flags=00001
+  SV : result=0x892033ff flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 13555000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0025c2d3 × 0xc03fdd16 [rnd=3]
+  DUT: result=0x806267be flags=00011
+  PY : result=0x807133df flags=00011
+  SV : result=0x807133df flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 14155000: uvm_test_top.env.sb [SB_FAIL] 
+  0x001d11b1 × 0x005e2291 [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 14905000: uvm_test_top.env.sb [SB_FAIL] 
+  0x761e60a2 × 0x000bf95c [rnd=0]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x356d0d7c flags=00001
+  SV : result=0x356d0d7c flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 14935000: uvm_test_top.env.sb [SB_FAIL] 
+  0x002b8ce8 × 0x9da5f4ef [rnd=1]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 15085000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0165f901 × 0x802c9c20 [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 15385000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8038843c × 0x68b2039b [rnd=0]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0xa91d32f6 flags=00001
+  SV : result=0xa91d32f6 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 15685000: uvm_test_top.env.sb [SB_FAIL] 
+  0x1d5ef873 × 0x800636d7 [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 15715000: uvm_test_top.env.sb [SB_FAIL] 
+  0x02d97d1f × 0x003bdd1a [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 16135000: uvm_test_top.env.sb [SB_FAIL] 
+  0x4e5cd4bd × 0x003b907a [rnd=1]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x0ecd86a1 flags=00001
+  SV : result=0x0ecd86a1 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 16225000: uvm_test_top.env.sb [SB_FAIL] 
+  0x002facd4 × 0x1f29c9e9 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 16975000: uvm_test_top.env.sb [SB_FAIL] 
+  0x804c7171 × 0x8016d23a [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 17425000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0026e6a3 × 0xb822d455 [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000063 flags=00011
+  SV : result=0x80000063 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 17665000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8009bee6 × 0x546fcb26 [rnd=1]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x93920f48 flags=00001
+  SV : result=0x93920f48 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 17695000: uvm_test_top.env.sb [SB_FAIL] 
+  0xff1b240e × 0x80244120 [rnd=0]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x3f2fc44c flags=00001
+  SV : result=0x3f2fc44c flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 17725000: uvm_test_top.env.sb [SB_FAIL] 
+  0x800f887f × 0x9ba0cfe0 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 18145000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8011f2f8 × 0x23a8bb12 [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 18625000: uvm_test_top.env.sb [SB_FAIL] 
+  0x001eca12 × 0x805b70ca [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 18655000: uvm_test_top.env.sb [SB_FAIL] 
+  0x000de100 × 0x2928251a [rnd=1]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 18745000: uvm_test_top.env.sb [SB_FAIL] 
+  0xee332f51 × 0x00210e51 [rnd=0]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0xae3918f6 flags=00001
+  SV : result=0xae3918f6 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 18805000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0011fd82 × 0xcf8220bd [rnd=0]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x8f125090 flags=00001
+  SV : result=0x8f125090 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 18895000: uvm_test_top.env.sb [SB_FAIL] 
+  0x802a2c54 × 0x189c7b23 [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 19045000: uvm_test_top.env.sb [SB_FAIL] 
+  0x800796ac × 0x4cef4b8f [rnd=2]
+  DUT: result=0x80000001 flags=00011
+  PY : result=0x8be2fcff flags=00001
+  SV : result=0x8be2fcff flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 19495000: uvm_test_top.env.sb [SB_FAIL] 
+  0x803e93f0 × 0x06847015 [rnd=1]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 19915000: uvm_test_top.env.sb [SB_FAIL] 
+  0x001eb376 × 0x2c540709 [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20155000: uvm_test_top.env.sb [SB_FAIL] 
+  0x00295a85 × 0x04ab0298 [rnd=1]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20215000: uvm_test_top.env.sb [SB_FAIL] 
+  0x802d5738 × 0x05b6bd74 [rnd=1]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20305000: uvm_test_top.env.sb [SB_FAIL] 
+  0x80027485 × 0x1e6c00a3 [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000001 flags=00011
+  SV : result=0x80000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20365000: uvm_test_top.env.sb [SB_FAIL] 
+  0x0970b2d2 × 0x8036f91f [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000001 flags=00011
+  SV : result=0x80000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20755000: uvm_test_top.env.sb [SB_FAIL] 
+  0x19d4bb17 × 0x000d1208 [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20785000: uvm_test_top.env.sb [SB_FAIL] 
+  0x802feed4 × 0xba07d9b8 [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x0000065b flags=00011
+  SV : result=0x0000065b flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 20845000: uvm_test_top.env.sb [SB_FAIL] 
+  0x00264984 × 0x12f53d0c [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 21025000: uvm_test_top.env.sb [SB_FAIL] 
+  0x5ac914f7 × 0x80021a9d [rnd=1]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x98d388b0 flags=00001
+  SV : result=0x98d388b0 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 21235000: uvm_test_top.env.sb [SB_FAIL] 
+  0x31837289 × 0x0030cbdf [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 22435000: uvm_test_top.env.sb [SB_FAIL] 
+  0x1808c080 × 0x80333fe2 [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000001 flags=00011
+  SV : result=0x80000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 22765000: uvm_test_top.env.sb [SB_FAIL] 
+  0x2b035013 × 0x80222a80 [rnd=2]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000001 flags=00011
+  SV : result=0x80000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 22915000: uvm_test_top.env.sb [SB_FAIL] 
+  0x80234002 × 0x56e43669 [rnd=0]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x96fb63fe flags=00001
+  SV : result=0x96fb63fe flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 23395000: uvm_test_top.env.sb [SB_FAIL] 
+  0x802a658b × 0xb62734b7 [rnd=1]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000006 flags=00011
+  SV : result=0x00000006 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 23605000: uvm_test_top.env.sb [SB_FAIL] 
+  0x071d3b47 × 0x803b36d2 [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 23875000: uvm_test_top.env.sb [SB_FAIL] 
+  0x00159427 × 0x26189ff1 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 24445000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8039f249 × 0x68aec208 [rnd=2]
+  DUT: result=0x80000001 flags=00011
+  PY : result=0xa91e3a65 flags=00001
+  SV : result=0xa91e3a65 flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 24775000: uvm_test_top.env.sb [SB_FAIL] 
+  0x5b7dfb72 × 0x003b2170 [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x1beaa87f flags=00001
+  SV : result=0x1beaa87f flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 25525000: uvm_test_top.env.sb [SB_FAIL] 
+  0x2e7fecd6 × 0x00186042 [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 25585000: uvm_test_top.env.sb [SB_FAIL] 
+  0xf2c6f2bb × 0x80045d2a [rnd=2]
+  DUT: result=0x00000000 flags=00011
+  PY : result=0x31590c6f flags=00001
+  SV : result=0x31590c6f flags=00001
+UVM_ERROR fp32_scoreboard.svh(73) @ 25885000: uvm_test_top.env.sb [SB_FAIL] 
+  0x801ded8d × 0x1112c401 [rnd=3]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 26305000: uvm_test_top.env.sb [SB_FAIL] 
+  0x99789f02 × 0x0004505f [rnd=0]
+  DUT: result=0xff800000 flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 27145000: uvm_test_top.env.sb [SB_FAIL] 
+  0x003fefcd × 0x28a5cd59 [rnd=2]
+  DUT: result=0x7f7fffff flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 28585000: uvm_test_top.env.sb [SB_FAIL] 
+  0x805c4939 × 0x802e789b [rnd=0]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000000 flags=00011
+  SV : result=0x00000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 28735000: uvm_test_top.env.sb [SB_FAIL] 
+  0x000a8672 × 0x00700fdc [rnd=3]
+  DUT: result=0x7f800000 flags=00101
+  PY : result=0x00000001 flags=00011
+  SV : result=0x00000001 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 29245000: uvm_test_top.env.sb [SB_FAIL] 
+  0x800f0f07 × 0x132a85d3 [rnd=1]
+  DUT: result=0xff7fffff flags=00101
+  PY : result=0x80000000 flags=00011
+  SV : result=0x80000000 flags=00011
+UVM_ERROR fp32_scoreboard.svh(73) @ 29665000: uvm_test_top.env.sb [SB_FAIL] 
+  0x8032af96 × 0x5ac6f712 [rnd=0]
+  DUT: result=0x80000000 flags=00011
+  PY : result=0x9b1d92e4 flags=00001
+  SV : result=0x9b1d92e4 flags=00001
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 30125000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO fp32_scoreboard.svh(289) @ 30125000: uvm_test_top.env.sb [SB] 
+═══════════════════════════════════
+  SCOREBOARD: 902 PASS, 98 FAIL
+═══════════════════════════════════
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 30125000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    6
+UVM_WARNING :    0
+UVM_ERROR :   98
+UVM_FATAL :    0
+** Report counts by id
+[NO_DPI_TSTNAME]     1
+[RNTST]     1
+[SB]     1
+[SB_FAIL]    98
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+WARNING: The Functional Coverage Database has not been updated during simulation. Please recheck testbench to confirm that covergroups are being instantiated correctly and rerun simulation.
+$finish called at time : 30125 ns : File "/tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Apr  8 08:07:41 2026...

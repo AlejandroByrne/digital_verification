@@ -1,4 +1,4 @@
-Running: xsim.dir/top_sim/xsimk -runall -simmode gui -testplusarg UVM_TESTNAME=fifo_full_empty_test -wdb top_sim.wdb -simrunnum 0 -socket 51401
+Running: xsim.dir/top_sim/xsimk -runall -simmode gui -testplusarg UVM_TESTNAME=fifo_rand_test -wdb top_sim.wdb -simrunnum 0 -socket 55535
 Design successfully loaded
 Design Loading Memory Usage: 192788 KB (Peak: 192796 KB)
 Design Loading CPU Usage: 1230 ms

@@ -29,6 +29,9 @@ class fp32_driver extends uvm_driver #(fp32_txn);
         vif.b_in     = 32'h0;
         vif.rnd_mode = 2'b00;
 
+        // Wait for reset deassertion before driving any traffic
+        @(posedge vif.clk iff vif.rst_n);
+
         forever begin
             seq_item_port.get_next_item(req);
 

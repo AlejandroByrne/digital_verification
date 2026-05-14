@@ -1,0 +1,110 @@
+#-----------------------------------------------------------
+# xsim v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Tue May  5 09:27:20 2026
+# Process ID         : 2178688
+# Current directory  : /home/ale/Documents/digital_verification/Barrel_shifter
+# Command line       : xsim -mode tcl -source {xsim.dir/top_sim/xsim_script.tcl}
+# Log file           : /home/ale/Documents/digital_verification/Barrel_shifter/xsim.log
+# Journal file       : /home/ale/Documents/digital_verification/Barrel_shifter/xsim.jou
+# Running On         : vivado
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+# CPU Frequency      : 4079.904 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16646 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20941 MB
+# Available Virtual  : 6464 MB
+#-----------------------------------------------------------
+source xsim.dir/top_sim/xsim_script.tcl
+# xsim {top_sim} -testplusarg UVM_TESTNAME=test_directed -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test test_directed...
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO my_scoreboard.svh(36) @ 1000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10100101 s=0 op=000 | y=10100101 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 11000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10100101 s=0 op=001 | y=10100101 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 21000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10100101 s=0 op=010 | y=10100101 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 31000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10100101 s=0 op=100 | y=10100101 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 41000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10100101 s=0 op=101 | y=10100101 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 51000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10100101 s=0 op=110 | y=10100101 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 61000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000000 s=3 op=000 | y=00000000 zf=1 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 71000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000000 s=3 op=001 | y=00000000 zf=1 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 81000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000000 s=3 op=100 | y=00000000 zf=1 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 91000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000000 s=3 op=101 | y=00000000 zf=1 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 101000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=11111111 s=1 op=000 | y=01111111 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 111000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=11111111 s=7 op=000 | y=00000001 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 121000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000001 s=1 op=000 | y=00000000 zf=1 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 131000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10000000 s=1 op=001 | y=11000000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 141000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10000000 s=7 op=001 | y=11111111 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 151000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=01000000 s=1 op=001 | y=00100000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 161000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=11111111 s=1 op=001 | y=11111111 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 171000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000001 s=1 op=010 | y=10000000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 181000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10000000 s=1 op=010 | y=01000000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 191000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=11110000 s=4 op=010 | y=00001111 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 201000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=11111111 s=7 op=100 | y=10000000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 211000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10000000 s=1 op=100 | y=00000000 zf=1 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 221000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000001 s=7 op=100 | y=10000000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 231000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=01000000 s=1 op=101 | y=00000000 zf=1 vf=1
+UVM_INFO my_scoreboard.svh(36) @ 241000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00111111 s=1 op=101 | y=01111110 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 251000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10111111 s=1 op=101 | y=11111110 zf=0 vf=1
+UVM_INFO my_scoreboard.svh(36) @ 261000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=11100000 s=2 op=101 | y=10000000 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 271000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10000000 s=7 op=101 | y=10000000 zf=0 vf=1
+UVM_INFO my_scoreboard.svh(36) @ 281000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=10000000 s=1 op=110 | y=00000001 zf=0 vf=0
+UVM_INFO my_scoreboard.svh(36) @ 291000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] PASS | x=00000001 s=7 op=110 | y=10000000 zf=0 vf=0
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 300000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO bshift_coverage.svh(152) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] Overall  : 84.2%
+UVM_INFO bshift_coverage.svh(154) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cp_op    : 100.0%
+UVM_INFO bshift_coverage.svh(156) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cp_shift : 75.0%
+UVM_INFO bshift_coverage.svh(158) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cp_x     : 100.0%
+UVM_INFO bshift_coverage.svh(160) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cp_zf    : 100.0%
+UVM_INFO bshift_coverage.svh(162) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cp_vf    : 100.0%
+UVM_INFO bshift_coverage.svh(164) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cx_op_shift : 47.9%
+UVM_INFO bshift_coverage.svh(166) @ 300000: uvm_test_top.my_env_h.my_coverage_h [COVERAGE] cx_op_x     : 66.7%
+UVM_INFO my_scoreboard.svh(97) @ 300000: uvm_test_top.my_env_h.my_scoreboard_h [SCOREBOARD] RESULTS: 30 PASS  0 FAIL
+UVM_INFO /tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 300000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   44
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[COVERAGE]     8
+[NO_DPI_TSTNAME]     1
+[RNTST]     1
+[SCOREBOARD]    31
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 300 ns : File "/tools/Xilinx/2025.1/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: [Common 17-206] Exiting xsim at Tue May  5 09:27:28 2026...

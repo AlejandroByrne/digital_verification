@@ -120,12 +120,12 @@ module fp32_mult_core (
         // Priority order: sNaN > qNaN > Inf×0 > Inf > Zero
         if (a_snan || b_snan) begin
             special_result = QNAN;
-            special_flags  = 3'b100;     // NV
+            special_flags  = 5'b10000;   // NV
         end else if (a_qnan || b_qnan) begin
             special_result = QNAN;         // no exception
         end else if ((a_inf && b_zero) || (a_zero && b_inf)) begin
             special_result = QNAN;
-            special_flags  = 3'b100;     // NV
+            special_flags  = 5'b10000;   // NV
         end else if (a_inf || b_inf) begin
             special_result = {sign_r, 8'hFF, 23'h0};   // ±Inf
         end else if (a_zero || b_zero) begin
@@ -175,8 +175,10 @@ module fp32_mult_core (
     //  STAGE 6: Add exponents  (exp_a + exp_b − bias)
     // ════════════════════════════════════════════════════════
     logic signed [10:0] exp_sum;
-    assign exp_sum = $signed({1'b0, exp_a_adj})
-                   + $signed({1'b0, exp_b_adj})
+    // Sign-extend the 10-bit signed exp_*_adj to 11 bits before summing.
+    // (Concatenating {1'b0, exp_*_adj} would zero-extend and corrupt negatives.)
+    assign exp_sum = {exp_a_adj[9], exp_a_adj}
+                   + {exp_b_adj[9], exp_b_adj}
                    - $signed(11'd127);
 
     // ════════════════════════════════════════════════════════

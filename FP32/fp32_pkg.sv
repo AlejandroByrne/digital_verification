@@ -59,9 +59,16 @@ package fp32_pkg;
     // `include "fp32_random_seq.svh"
     // `include "fp32_directed_seq.svh"
 
-    // Structural hierarchy
+    // Hierarchy
     `include "fp32_agent.svh"
     `include "fp32_env.svh"
     `include "fp32_base_test.svh"
+
+    // Sequences
+    `include "fp32_smoke_seq.svh"
+    `include "fp32_constrained_seq.svh"
+
+    // Tests
+    `include "fp32_tests.svh"
 
 endpackage : fp32_pkg
