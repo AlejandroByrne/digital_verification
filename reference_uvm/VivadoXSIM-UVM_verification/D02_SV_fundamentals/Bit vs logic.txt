@@ -1,0 +1,6 @@
+Bit: The bit data type is a 2-state binary digit used when you only need to model explicit 0 and 1 values. 
+It's efficient for functional models and testbenches where unknown or high-impedance states are not required, leading to faster simulation speeds.
+
+Logic: The logic data type is a 4-state data type that is fundamental for modeling digital hardware. 
+The x and z states allow the designer to represent uninitialized values and the high-impedance behavior of real pins and wires,
+which is crucial for accurate hardware simulation. 

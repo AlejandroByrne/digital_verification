@@ -1,0 +1,7 @@
+Wire Vs Reg Vs logic
+
+In Hardware Description Languages (HDLs) like Verilog/SystemVerilog, 
+wire connects components (physical wires, combinational logic), 
+reg stores values (flip-flops, latches, registers), 
+and logic (SystemVerilog) is a versatile, unified type that acts like wire or reg depending on assignment context, representing both connections and storage, simplifying design by avoiding confusion and allowing multi-driver assignment with "last-assignment-wins" behavior. 
+
